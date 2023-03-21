@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./assets/fonts/inter.css" />
     <title>Todo-List</title>
   </head>
-  <body class="bg-blue-500">
-    <div class="container text-neutral-50">Hello World</div>
-    <script src="./index.html"></script>
+  <body class="flex justify-center items-center h-full bg-[#1E1E1E]">
+    <div
+      class="bg-[#1E1F25] border-2 border-[#29292F] mx-auto py-16 px-7 h-screen w-full md:rounded-lg md:w-3/4 md:h-[90vh] md:p-16 shadow-2xl flex flex-col"
+    >
+      <div class="flex justify-between w-full h-min">
+        <h4 class="font-interBold text-white text-5xl md:text-6xl">Tasks</h4>
+        <div
+          class="h-10 w-10 md:h-12 md:w-12 p-2 bg-[#24242D] shadow-[#29292F] flex items-center justify-center rounded-lg"
+        >
+          <img src="./assets/images/🚀 .png" alt="" class="w-full md:w-[80%]" />
+        </div>
+      </div>
+      <div class="mt-10 flex flex-col justify-between sm:flex-row">
+        <div>
+      <p class="text-base text-[#9494B8] font-interBold mb-3">Add New Task</p>
+          <input type="text" class="w-full rounded py-1 px-3 outline-none bg-gradient-to-r from-[#2B2D37] to-[#262933] text-[#DADADA] text-base border-none focus:scale-105 transition-transform ">      
+          </div>
+<button class="px-3 py-1 mt-2 sm:self-end bg-[#4c4c4e] text-[#DADADA] font-interMedium rounded-md text-sm active:scale-[0.9] transition-all ease-in-out">Add</button>
+      </div>
+      <div class="my-10 bg-[#29292F] text-[#29292F] h-0.5" ></div>
+      <div>
+          <ul>
+            <li>
+              <div class="flex">
+                <input type="checkbox" class="h-5 w-5 bg-gradient-to-r from-[#2B2D37] to-[#262933] border-[#0E0E11] border-[1px] rounded-sm appearance-none" >
+                <p class="text-[#DADADA] ml-4">This is a task</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+    <script src="./index.js"></script>
   </body>
 </html>
