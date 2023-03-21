@@ -571,6 +571,14 @@ video {
   margin-top: 0.5rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -703,6 +711,14 @@ video {
   justify-content: space-between;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .self-end {
   align-self: flex-end;
 }
@@ -733,6 +749,10 @@ video {
 
 .rounded-md {
   border-radius: 0.375rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-l {
@@ -872,6 +892,18 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-\[\#1a1b1e\] {
+  --tw-gradient-from: #1a1b1e;
+  --tw-gradient-to: rgb(26 27 30 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-\[\#8e8e8e\] {
+  --tw-gradient-from: #8e8e8e;
+  --tw-gradient-to: rgb(142 142 142 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .to-\[\] {
   --tw-gradient-to: ;
 }
@@ -886,6 +918,14 @@ video {
 
 .to-green-500 {
   --tw-gradient-to: #22c55e;
+}
+
+.to-\[\#14161c\] {
+  --tw-gradient-to: #14161c;
+}
+
+.to-\[\#555555\] {
+  --tw-gradient-to: #555555;
 }
 
 .fill-current {
