@@ -45,12 +45,13 @@ export const deleteTask = (id) => {
     render(newTasks);
 };
 export const render = (x) => {
-    const parent = document.querySelector("ul");
-    parent.innerHTML = "";
-    x.forEach((x) => {
-        const child = document.createElement("li");
-        child.className = "flex justify-between items-center my-1";
-        child.innerHTML = `<div class="flex items-center">
+    if (x) {
+        const parent = document.querySelector("ul");
+        parent.innerHTML = "";
+        x.forEach((x) => {
+            const child = document.createElement("li");
+            child.className = "flex justify-between items-center my-1";
+            child.innerHTML = `<div class="flex items-center">
                 <div class="w-3 h-3 rounded-full bg-gradient-to-r from-[#8e8e8e] to-[#555555]"></div>
                 <p class="text-[#DADADA] ml-2">${x.text}</p>
               </div>
@@ -58,14 +59,15 @@ export const render = (x) => {
                 <button id=${x.id} class="edit px-2 py-1 bg-[#4c4c4e] text-[#DADADA] font-interMedium rounded-md text-sm active:scale-[0.9] transition-all ease-in-out">Edit</button>
                 <button id=${x.id} class="delete px-2 py-1 bg-[#4c4c4e] text-[#DADADA] font-interMedium rounded-md text-sm active:scale-[0.9] transition-all ease-in-out">Delete</button>
               </div>`;
-        parent.appendChild(child);
-        const EditButtons = document.querySelectorAll(".edit");
-        const DeleteButtons = document.querySelectorAll(".delete");
-        EditButtons.forEach((x, index) => {
-            x.addEventListener("click", () => { editTask(parseInt(x.id)); });
+            parent.appendChild(child);
+            const EditButtons = document.querySelectorAll(".edit");
+            const DeleteButtons = document.querySelectorAll(".delete");
+            EditButtons.forEach((x, index) => {
+                x.addEventListener("click", () => { editTask(parseInt(x.id)); });
+            });
+            DeleteButtons.forEach((x) => {
+                x.addEventListener("click", () => { deleteTask(parseInt(x.id)); });
+            });
         });
-        DeleteButtons.forEach((x) => {
-            x.addEventListener("click", () => { deleteTask(parseInt(x.id)); });
-        });
-    });
+    }
 };

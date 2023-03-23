@@ -53,13 +53,14 @@ export const deleteTask = (id: number): void => {
     render(newTasks)
 }
 
-export const render = (x :taskInterface[]):void => {
-    const parent: HTMLUListElement = document.querySelector("ul")!
-    parent.innerHTML = ""
-    x.forEach((x:taskInterface) => {
-     const child =  document.createElement("li")
-     child.className = "flex justify-between items-center my-1"
-     child.innerHTML= `<div class="flex items-center">
+export const render = (x: taskInterface[]): void => {
+    if (x) {
+        const parent: HTMLUListElement = document.querySelector("ul")!
+        parent.innerHTML = ""
+        x.forEach((x: taskInterface) => {
+            const child = document.createElement("li")
+            child.className = "flex justify-between items-center my-1"
+            child.innerHTML = `<div class="flex items-center">
                 <div class="w-3 h-3 rounded-full bg-gradient-to-r from-[#8e8e8e] to-[#555555]"></div>
                 <p class="text-[#DADADA] ml-2">${x.text}</p>
               </div>
@@ -67,19 +68,20 @@ export const render = (x :taskInterface[]):void => {
                 <button id=${x.id} class="edit px-2 py-1 bg-[#4c4c4e] text-[#DADADA] font-interMedium rounded-md text-sm active:scale-[0.9] transition-all ease-in-out">Edit</button>
                 <button id=${x.id} class="delete px-2 py-1 bg-[#4c4c4e] text-[#DADADA] font-interMedium rounded-md text-sm active:scale-[0.9] transition-all ease-in-out">Delete</button>
               </div>`
-        parent.appendChild(child)
+            parent.appendChild(child)
 
-    const EditButtons:NodeListOf<HTMLButtonElement> = document.querySelectorAll(".edit")!
-    const DeleteButtons:NodeListOf<HTMLButtonElement>  = document.querySelectorAll(".delete")!
+            const EditButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".edit")!
+            const DeleteButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".delete")!
 
 
-        EditButtons.forEach((x: HTMLButtonElement, index: number) => {
-    x.addEventListener("click", ()=>{editTask(parseInt(x.id))})
-})
+            EditButtons.forEach((x: HTMLButtonElement, index: number) => {
+                x.addEventListener("click", () => { editTask(parseInt(x.id)) })
+            })
 
-DeleteButtons.forEach((x: HTMLButtonElement) => {
-    x.addEventListener("click", () => { deleteTask(parseInt(x.id)) }
-)})
-    })
-
+            DeleteButtons.forEach((x: HTMLButtonElement) => {
+                x.addEventListener("click", () => { deleteTask(parseInt(x.id)) }
+                )
+            })
+        })
+    }
 }
