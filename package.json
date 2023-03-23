@@ -5,6 +5,8 @@
   "repository": "git@github.com:Semako123/todo_typescript.git",
   "author": "semako123 <zosusemenoch@gmail.com>",
   "license": "MIT",
+  "scripts": {
+  },
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
